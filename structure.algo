@@ -1,0 +1,35 @@
+ALGORITHM checkpoint Htable
+VAR
+   htab:= HASH_TABLE<integer,integer>
+   i,j,sum1,sum2,summ; count1, count2:=0 =integer
+   tab1,tab2:= array of integer [20]
+   count :=integer
+BEGIN
+FOR i FROM 0 TO tab1.length STEP 1 DO
+    IF (htab.lookup(tab1[i]==true) THEN
+        count1=htab.get(tab1[i])
+        htab.insert(tab1[i],count+1)
+        ELSE
+        htab.insert(tab[i],1)
+    END_IF
+END_FOR
+   FOR i FROM 0 TO tab1.length STEP 1  DO
+   IF (htab.get(tab1[i])==1) THEN
+   sum1+=tab1[i]*2
+   END_IF
+   END_FOR
+   FOR j FROM 0 TO tab2.length STEP 1 DO
+    IF (htab.lookup(tab2[j]==true) THEN
+        count2=htab.get(tab2[j])
+        htab.insert(tab2[j],count+1)
+        ELSE
+        htab.insert(tab2[j],1)
+    END_IF
+END_FOR
+   FOR j FROM 0 TO tab2.length STEP 1  DO
+   IF (htab.get(tab2[j])==1) THEN
+   sum2+=tab2[j]*2
+   END_IF
+   END_FOR
+   summ:= sum1+sum2
+END

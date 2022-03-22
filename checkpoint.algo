@@ -1,0 +1,33 @@
+ALGORITHM checkpoint
+VAR
+   tab1:ARRAY_OF INTEGER[n];
+   tab2 : ARRAY_OF INTEGER[m];
+   n , m : INTEGER
+BEGIN
+    var sum1,sum2,somme=0
+    var found=BOOLEAN
+    i,j=0
+    FOR i FROM 0 TO n STEP 1  DO
+    found:= false
+        FOR j FROM 0 TO m STEP 1  DO
+            IF (tab1[i]==tab2[j]) THEN
+            found=true
+            END_IF
+            END_FOR
+            IF (found==false)THEN
+                sum1=+tab1[i]*2
+            END_IF
+        END_FOR
+          FOR j FROM 0 TO m STEP 1  DO
+    found:= false
+        FOR i FROM 0 TO n STEP 1  DO
+            IF (tab2[j]==tab1[i]) THEN
+            found=true
+            END_IF
+            END_FOR
+            IF (found==false)THEN
+                sum2=+tab2[j]*2
+            END_IF
+        END_FOR
+        somme=sum1+sum2
+END
